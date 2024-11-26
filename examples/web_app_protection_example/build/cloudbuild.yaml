@@ -37,6 +37,8 @@ steps:
         $_BEFORE_SCRIPT
         build/pipeline-functions.sh init "$$BRANCH_NAME"
       fi
+      options:
+  logging: CLOUD_LOGGING_ONLY
 
 - name: 'gcr.io/cloud-foundation-cicd/cft/developer-tools-light:1'
   entrypoint: '/bin/bash'
@@ -48,6 +50,8 @@ steps:
         $_BEFORE_SCRIPT
         build/pipeline-functions.sh plan_validate_all "$$BRANCH_NAME"
       fi
+      options:
+  logging: CLOUD_LOGGING_ONLY
 
 - name: 'gcr.io/cloud-foundation-cicd/cft/developer-tools-light:1'
   entrypoint: '/bin/bash'
@@ -59,6 +63,8 @@ steps:
         $_BEFORE_SCRIPT
         build/pipeline-functions.sh plan "$$BRANCH_NAME"
       fi
+      options:
+  logging: CLOUD_LOGGING_ONLY
 
 - name: 'gcr.io/cloud-foundation-cicd/cft/developer-tools-light:1'
   entrypoint: '/bin/bash'
@@ -70,3 +76,6 @@ steps:
         $_BEFORE_SCRIPT
         build/pipeline-functions.sh apply "$$BRANCH_NAME"
       fi
+      options:
+  logging: CLOUD_LOGGING_ONLY
+
