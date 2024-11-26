@@ -13,6 +13,7 @@
 # limitations under the License.
 
 options:
+  logging: CLOUD_LOGGING_ONLY
   env:
     - 'BRANCH_NAME=$BRANCH_NAME'
     - 'EXAMPLE_BUILD=web_app_protection_example'
@@ -27,8 +28,6 @@ substitutions:
     for i in `find environments/ -mindepth 1 -maxdepth 1 -type d` ; do cp -Prf *.tf ./scripts/ $i ; done
 
 steps:
-  options:
-    logging: CLOUD_LOGGING_ONLY
 - name: 'gcr.io/cloud-foundation-cicd/cft/developer-tools-light:1'
   entrypoint: '/bin/bash'
   id: 'tf_init'
