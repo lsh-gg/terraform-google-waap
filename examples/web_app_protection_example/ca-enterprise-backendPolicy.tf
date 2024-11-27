@@ -1,15 +1,4 @@
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "6.12.0"
-    }
-  }
-}
 
-provider "google" {
-  # Configuration options
-}
 
 resource "google_compute_security_policy" "infrastructure_as_code_enterprise_security_policy" {
   adaptive_protection_config {
