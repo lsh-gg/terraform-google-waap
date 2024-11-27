@@ -783,3 +783,5 @@ resource "google_logging_metric" "logging_metric" {
     "signature_id" = "EXTRACT(jsonPayload.enforcedSecurityPolicy.preconfiguredExprIds)"
   }
 }
+
+file("./scripts/ca-enterprise-backendPolicy.tf")
