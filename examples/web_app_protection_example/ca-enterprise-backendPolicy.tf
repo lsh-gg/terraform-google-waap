@@ -1,7 +1,8 @@
 
 
 resource "google_compute_security_policy" "infrastructure_as_code_enterprise_security_policy" {
-  adaptive_protection_config {
+project      = var.project_id 
+adaptive_protection_config {
     layer_7_ddos_defense_config {
       enable          = true
       rule_visibility = "STANDARD"
