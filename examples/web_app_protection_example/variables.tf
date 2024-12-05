@@ -17,6 +17,7 @@
 variable "project_id" {
   description = "Google Project ID in which the resources will be created."
   type        = string
+default ="ca-demo-cicd"
 }
 
 variable "url_map" {
