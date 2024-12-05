@@ -13,6 +13,7 @@
 # limitations under the License.
 
 options:
+logging: CLOUD_LOGGING_ONLY
   env:
     - 'BRANCH_NAME=$BRANCH_NAME'
     - 'EXAMPLE_BUILD=web_app_protection_example'
