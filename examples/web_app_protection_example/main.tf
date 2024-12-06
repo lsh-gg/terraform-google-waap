@@ -268,7 +268,7 @@ module "backend_policy" {
     }
   }
 
-}
+
 
 adaptive_protection_auto_deploy = {
   enable   = true
