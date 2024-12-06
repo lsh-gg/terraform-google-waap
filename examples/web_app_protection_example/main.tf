@@ -257,6 +257,19 @@ module "backend_policy" {
 
   recaptcha_redirect_site_key = google_recaptcha_enterprise_key.primary.name
 
+adaptive_protection_auto_deploy = {
+  enable   = true
+  priority = 100
+  action   = "throttle"
+
+  rate_limit_options = {
+    exceed_action                        = "deny(502)"
+    rate_limit_http_request_count        = 500
+    rate_limit_http_request_interval_sec = 120
+    enforce_on_key                       = "IP"
+  }
+}
+
   pre_configured_rules = {
     "sqli_sensitivity_level_1" = {
       action          = "deny(403)"
