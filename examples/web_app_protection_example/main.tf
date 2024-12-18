@@ -257,17 +257,7 @@ module "backend_policy" {
 
   recaptcha_redirect_site_key = google_recaptcha_enterprise_key.primary.name
  
- threat_intelligence_rules = {
 
-    deny_malicious_ips = {
-      action      = "deny(502)"
-      priority    = 200
-      description = "Deny IP addresses known to attack web applications"
-      preview     = false
-      feed        = "iplist-known-malicious-ips"
-      exclude_ip  = "['47.100.100.100', '47.189.12.139']"
-    }
-  }
 
 
 
